@@ -1,9 +1,9 @@
 {
-  "name": "mylib",
+  "name": "js_util",
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "jest --colors",
+    "test": "jest --colors --bail",
     "jsdoc": "jsdoc ./layout/*.js ./container/*.js ./bootstrap/*.js -p",
     "start": "jest --watch --colors --bail"
   },
