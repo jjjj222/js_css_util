@@ -1,13 +1,12 @@
 import { BootstrapObj } from '../base_obj.js';
 
 //------------------------------------------------------------------------------
-//   TextInput
+//   Select
 //------------------------------------------------------------------------------
-export class TextInput extends BootstrapObj {
+export class Select extends BootstrapObj {
     constructor() {
-        super('input');
+        super('select');
 
-        this.root.type = 'text';
         this.root.classList.add('form-control');
     }
 
@@ -17,10 +16,8 @@ export class TextInput extends BootstrapObj {
 }
 
 //------------------------------------------------------------------------------
-TextInput.prototype.focus = function() {
-    this.root.focus();
-}
-
-TextInput.prototype.select = function() {
-    this.root.select();
+Select.prototype.addOption = function(text) {
+    const option = document.createElement('option');
+    option.textContent = text;
+    this.root.appendChild(option);
 }

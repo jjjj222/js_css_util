@@ -3,6 +3,7 @@ import { Label } from '../bootstrap/label.js';
 import { Form } from '../bootstrap/form/form.js';
 import { TextInput } from '../bootstrap/form/text_input.js';
 import { Checkbox } from '../bootstrap/form/checkbox.js';
+import { Select } from '../bootstrap/form/select.js';
 
 //------------------------------------------------------------------------------
 //   Toolbar
@@ -29,13 +30,7 @@ export class Toolbar {
         this.right_group.classList.add('ml-auto');
         form.appendChild(this.right_group);
 
-        //this.form_right = document.createElement('form');
-        //this.form_right.classList.add('form-inline');
-        //this.form_right.classList.add('ml-auto');
-        //this.root.appendChild(this.form_right);
-
         this.form = this.left_group
-        //this.align_right = false;
     }
 }
 
@@ -76,7 +71,6 @@ Toolbar.prototype.addFileInputButton = function(label, callback) {
     this.form.appendChild(input.root);
 }
 
-//Toolbar.prototype.addInput = function(callback) {
 Toolbar.prototype.addInput = function() {
     const input = new TextInput();
     input.setSmall();
@@ -84,25 +78,6 @@ Toolbar.prototype.addInput = function() {
     input.setNoHighlight();
 
     this.form.appendChild(input.root);
-
-    //input.on('input', () => {
-    //    //console.log(input.root.value);
-    //    callback(input.root.value);
-    //})
-
-    //input.on('keydown', event => {
-    //    event.stopPropagation();
-
-    //    //console.log(event.key);
-    //    if (event.key == 'Enter') {
-    //        event.preventDefault();
-    //    //    cli_mgr.process(input.value);
-    //    //    input.value = "";
-    //    //} else if (event.key == 'Tab') {
-    //    //    event.preventDefault();
-    //    //    console.log('qq tab');
-    //    }
-    //})
 
     return input;
 }
@@ -113,11 +88,20 @@ Toolbar.prototype.addLabel = function(text) {
     const margin = '10px'
     label.root.style.marginLeft = margin;
     label.root.style.marginRight = margin;
-    //const l = document.createElement('label');
-    //l.textContent = 'qqq';
     this.form.appendChild(label.root);
 
     return label;
+}
+
+Toolbar.prototype.addSelect = function() {
+    const select = new Select();
+    select.setSmall();
+    select.setNoRadius();
+    select.setNoHighlight();
+
+    this.form.appendChild(select.root);
+
+    return select;
 }
 
 //------------------------------------------------------------------------------
@@ -125,17 +109,6 @@ Toolbar.prototype.addLabel = function(text) {
 //------------------------------------------------------------------------------
 class FormFileInput {
     constructor(label, callback) {
-        //super();
-        //this.root = document.createElement("form");
-        //this.root.className = "form-inline";
-
-        //const label = document.createElement("label");
-        //label.classList.add("navbar-text");
-        //label.textContent = "No file chosen";
-        //label.style.marginRight = "10px";
-        ////this.root.appendChild(label);
-        //this.root.appendChild(label);
-
         const btn = new Button(label);
         this.root = btn.root;
 
@@ -169,7 +142,6 @@ class FormFileInput {
                 return;
             }
 
-            //label.textContent = file.name;
             callback(file);
         }
 
@@ -188,44 +160,3 @@ class FormFileInput {
         input.style.opacity = "0";
     }
 }
-
-//------------------------------------------------------------------------------
-//   FormCheck
-//------------------------------------------------------------------------------
-//class FormCheck extends FormObj {
-//class FormCheck {
-//    constructor(label, callback) {
-//        const checkbox = new Checkbox(label, callback);
-//        this.root = checkbox.root;
-//        //super();
-//
-//        //this.root = document.createElement("div");
-//        //this.root.classList.add("form-check");
-//
-//        //const margin = '10px'
-//
-//        ////this.root.style.marginLeft = this.marginLeft;
-//        ////this.root.style.marginRight = this.marginRight;
-//        //this.root.style.marginLeft = margin;
-//        //this.root.style.marginRight = margin;
-//        //this.root.style.userSelect = "none";
-//
-//        //const label_dom = document.createElement("label");
-//        //label_dom.classList.add("form-check-label");
-//        //this.root.appendChild(label_dom);
-//
-//        //const input = document.createElement("input");
-//        //input.type = "checkbox";
-//        //input.classList.add("form-check-input");
-//        //label_dom.appendChild(input);
-//
-//        //const text = document.createTextNode(label);
-//        //label_dom.appendChild(text);
-//
-//        //input.addEventListener('click', event => {
-//        //    event.stopPropagation();
-//
-//        //    callback(input.checked);
-//        //})
-//    }
-//}

@@ -34,4 +34,9 @@ BootstrapObj.prototype.setNoSelect = function() {
 }
 
 //------------------------------------------------------------------------------
+BootstrapObj.prototype.setSmall = function() {
+    this.root.classList.add('form-control-sm');
+}
+
+//------------------------------------------------------------------------------
 BootstrapObj.prototype.on = event_util.on;

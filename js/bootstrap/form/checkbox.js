@@ -9,7 +9,6 @@ export class Checkbox extends BootstrapObj {
 
         this.root.classList.add("form-check");
         this.setNoSelect();
-        //this.root.style.userSelect = "none";
 
         const label_dom = document.createElement("label");
         label_dom.classList.add("form-check-label");

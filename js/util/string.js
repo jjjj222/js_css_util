@@ -16,7 +16,12 @@ export function glob_to_js_reg_pattern(glob_pattern) {
         const c = glob_pattern[i];
         if (c == '*') {
             result += '.*';
-        } else{
+        } else if (c == '?') {
+            result += '.';
+        } else if (c == '.' || c == '(' || c == ')' || c == '-' || c == '[' || c == ']') {
+            result += '\\';
+            result += c;
+        } else {
             result += c;
         }
     }

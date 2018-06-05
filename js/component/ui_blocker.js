@@ -10,12 +10,10 @@ export class UIBlocker {
         this.root.style.width = '100%';
         this.root.style.height = '100%';
         this.root.style.zIndex = '1000';
-        //this.root.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
         this.root.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
 
         this.root.style.display = 'flex';
         this.root.style.flexDirection = 'column';
-        //this.root.style.alignItems = 'center';
         this.root.style.justifyContent = 'space-around';
 
         this.root.dataset.testId = 'ui-blocker';

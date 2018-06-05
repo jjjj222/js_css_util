@@ -13,14 +13,10 @@ export class UIGraph extends Graph {
 UIGraph.prototype.resetSelect = function() {
     this.nodes.forEach(n => {
         n.resetSelect();
-        //n.is_selected = false;
-        //n.near_selected_count = 0;
     })
 
     this.edges.forEach(e => {
         e.resetSelect();
-        //e.is_selected = false;
-        //e.near_selected_count = 0;
     })
 }
 

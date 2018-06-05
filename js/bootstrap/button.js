@@ -14,13 +14,10 @@ export class Button extends BootstrapObj {
     constructor(text) {
         super('button');
 
-        //this.root = document.createElement('button');
-
         this.root.type = 'button';
         this.root.textContent = text;
         this.root.classList.add('btn');
 
-        //this.root.style.userSelect = "none";
         this.setNoSelect();
     }
 
